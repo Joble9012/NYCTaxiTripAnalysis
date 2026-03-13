@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: daily_trip_stats
+    description: "Daily summary of taxi trips including trip count, average distance, and revenue"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: trip_date
+        description: "Date of the trip"
+        data_type: date
+        tests:
+          - not_null
+
+      - name: total_trips
+        description: "Total number of trips for the day"
+        data_type: bigint
+
+      - name: avg_distance
+        description: "Average trip distance"
+        data_type: double
+
+      - name: avg_revenue
+        description: "Average revenue per trip"
+        data_type: double
+
+
+  - name: revenue_stats
+    description: "Daily revenue generated from trips"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: trip_date
+        description: "Date of the trip"
+        data_type: date
+        tests:
+          - not_null
+
+      - name: total_revenue
+        description: "Total revenue per day"
+        data_type: double
+
+
+  - name: passenger_stats
+    description: "Daily passenger statistics"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: trip_date
+        description: "Date of the trip"
+        data_type: date
+        tests:
+          - not_null
+
+      - name: total_trips
+        description: "Total trips"
+        data_type: bigint
+
+      - name: total_passengers
+        description: "Total passengers"
+        data_type: bigint
+
+
+  - name: fare_vs_distance
+    description: "Relationship between trip distance and fare"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: trip_distance
+        description: "Trip distance in miles"
+        data_type: double
+
+      - name: total_amount
+        description: "Total amount paid"
+        data_type: double
+
+
+  - name: trip_distance_distribution
+    description: "Distribution of trip distances"
+    config:
+      contract:
+        enforced: true
+
+    columns:
+      - name: trip_distance
+        description: "Trip distance"
+        data_type: double
+
+      - name: trips
+        description: "Number of trips for that distance"
+        data_type: bigint

@@ -1,4 +1,19 @@
 {
     "jupyter.interactiveWindow.cellMarker.codeRegex": "^# COMMAND ----------|^# Databricks notebook source|^(#\\s*%%|#\\s*\\<codecell\\>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
-    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------"
+    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
+    "workbench.editorAssociations": {
+        "*.parquet": "duckdb.dataFileViewer",
+        "*.csv": "duckdb.dataFileViewer",
+        "*.tsv": "duckdb.dataFileViewer"
+    },
+    "sqltools.connections": [],
+    "duckdb.databases": [
+        {
+            "alias": "taxi_duckdb",
+            "type": "file",
+            "path": "/Users/joblethomas/Desktop/Projects/NYCTaxiTripAnalysis/taxi_dbt_project/data/taxi_duckdb.db",
+            "attached": false
+        }
+    ],
+    "duckdb.defaultDatabase": "memory"
 }

@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: taxi
+    tables:
+      - name: trips
+        description: "FHvhv Trip Data"
+        external:
+          location: "{{ project_dir }}/data/fhvhv_tripdata_2026-01.parquet"
+          file_format: parquet
